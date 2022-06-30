@@ -1,0 +1,58 @@
+<!--
+    This is the main page of my portfolio website
+
+    Author: Ming Li
+    Date: 6/29/2022
+    File: index.html
+-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Ming Li | Front Web Developer</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="img/initals-light.png">
+        <link rel="stylesheet" href="css/main-page.css">
+    </head>
+
+    <body>
+        <!-- Nav bar -->
+        <div id="nav-bar" class="noselect">
+            <div id="nav-bar-content" class="wrapper">
+                <div id="my-icon">
+                    <a href="#">
+                        <!-- initials icon -->
+                        <img id="initials-light" class="active" src="img/initals-light.png" alt="">
+                        <img id="initials-dark" class="hidden" src="img/initals-dark.png" alt="">
+                        <!-- cow icon -->
+                        <img id="cow-light" class="hidden" src="img/icon-light.png" alt="">
+                        <img id="cow-dark" class="hidden" src="img/icon-dark.png" alt="">
+                    </a>
+                </div>
+
+                <div>
+                    <!-- Opens a new page to my resume -->
+                    <a href="pages/resume.html" id="resume" class="button" target="_blank"><span>Resume</span></a>
+                    <!-- btn changes light/dark mode -->
+                    <div id="light-dark-btn">
+                        <span class="ight-mode">🌞</span>
+                        <span class="dark-mode hidden">🌙</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>Howdy, Welcome to my Portfolio Website</h1>
+            <p>I'm Ming Li, a Junior Front-End Web Developer</p>
+        </header>
+
+        <script src="js/main-page.js"></script>
+    </body>
+</html>

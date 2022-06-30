@@ -1,0 +1,160 @@
+/*
+    This is my styles for my main page
+
+    Author: Ming Li
+    Date: 6/29/2022
+    File: main-page.css
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-teal: #29D4A7;
+    --golden: #FFDD00;
+    --bg-dark: #111111;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+body.dark-mode-bg {
+    background: var(--bg-dark);
+}
+
+.dark-mode-text {
+    color: #E6EAFF;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.wrapper {
+    margin: 0 3rem;
+}
+
+.button {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.noselect {
+    user-select: none;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+/* nav-bar
+======================================================================================================================*/
+#nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+    height: 128px;
+
+    overflow: hidden;
+}
+
+#nav-bar div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+#nav-bar-content {
+    width: 1366px;
+}
+
+#nav-bar-content div:last-child a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* My icons */
+#my-icon img {
+    width: 100px;
+}
+
+/* resume */
+#resume {
+    width: 100px;
+    height: 50px;
+
+    font-size: 1.4rem;
+    color: var(--dark-teal);
+    border: 2px solid var(--dark-teal);
+    border-radius: 30px;
+
+    transition: 200ms ease-in-out;
+
+    overflow: hidden;
+}
+
+#resume:hover {
+    color: white;
+    background-color: var(--dark-teal);
+}
+
+#resume.dark-mode {
+    color: var(--golden);
+    border: 2px solid var(--golden);
+}
+
+#resume.dark-mode:hover {
+    color: var(--bg-dark);
+    background-color: var(--golden);
+}
+
+/* Light/Dark mode btn */
+#light-dark-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#light-dark-btn span {
+    width: 50px;
+    height: 50px;
+
+    font-size: 2em;
+    text-align: center;
+
+    border: 2px solid var(--dark-teal);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--dark-teal);
+}
+
+#light-dark-btn span.dark-mode {
+    border: 2px solid var(--golden);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--golden);
+}
+
+#light-dark-btn span:hover {
+    cursor: pointer;
+}
+
+/* header
+======================================================================================================================*/
+header {
+    margin-top: 2rem;
+}
+
+header p {
+    margin-top: 1rem;
+
+    font-size: 2rem;
+}
