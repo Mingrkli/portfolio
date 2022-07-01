@@ -14,14 +14,15 @@
     top: 0;
     left: 0;
 
-    background: var(--bg-dark);
+    opacity: 1;
+    background: #111111;
 }
 
 /* When page finished loading, loading starts to fade */
 .loading-wrapper.loaded {
     opacity: 0;
 
-    transition: 500ms ease-in-out;
+    transition: 200ms ease-in-out;
 }
 
 /* Hides the display when the transition is over */
