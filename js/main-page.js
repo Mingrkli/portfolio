@@ -13,7 +13,8 @@ const headerPara = document.querySelector("header p");
 const allBioPara = document.querySelectorAll("#bio p");
 // Body
 const docBody = document.querySelector("body");
-const lightDarkModeBtnBtn = document.querySelectorAll("#light-dark-btn span");
+const lightDarkModeBtn = document.querySelector("#light-dark-btn");
+const lightDarkModeBtnIcon = document.querySelectorAll("#light-dark-btn span");
 // My Icons
 const icon = document.querySelector("#my-icon a")
 const myIcon = document.querySelectorAll("#my-icon img")
@@ -26,39 +27,48 @@ const resumeBtn = document.querySelector("#resume");
 const mainSection = document.querySelector("main");
 // Footer
 const footerSection = document.querySelector("footer");
+const fontAwesomeIcons = document.querySelectorAll("#font-awesome-icons-list a");
 
+/* Loops
+======================================================================================================================*/
 // Following toggles light to dark mode and vice versa
 for (let i = 0; i < 2; i++) {
-    lightDarkModeBtnBtn[i].addEventListener("click", function () {
+    lightDarkModeBtnIcon[i].addEventListener("click", function () {
         // h1, h2, p
         for (let head = 0; head < allHeadOne.length; head++)
         {
-            allHeadOne[head].classList.toggle("dark-mode-text");
+            allHeadOne[head].classList.toggle("dark-mode-text")
         }
         for (let bio = 0; bio < allBioPara.length; bio++)
         {
-            allBioPara[bio].classList.toggle("dark-mode-text");
+            allBioPara[bio].classList.toggle("dark-mode-text")
         }
         bioHeadTwo.classList.toggle("dark-mode-text")
-        headerPara.classList.toggle("dark-mode-text");
+        headerPara.classList.toggle("dark-mode-text")
         // Body bg
-        docBody.classList.toggle("dark-mode-bg");
+        docBody.classList.toggle("dark-mode-bg")
         resumeBtn.classList.toggle("dark-mode")
+        lightDarkModeBtn.classList.toggle("dark-mode")
         // main
         mainSection.classList.toggle("dark-mode")
         // footer
         footerSection.classList.toggle("dark-mode")
+        for (let fontAwe = 0; fontAwe < fontAwesomeIcons.length; fontAwe++) {
+            fontAwesomeIcons[fontAwe].classList.toggle("dark-mode")
+        }
 
         for (let x = 0; x < 2; x++) {
             // Light/Dark button btn
-            lightDarkModeBtnBtn[x].classList.toggle("hidden");
+            lightDarkModeBtnIcon[x].classList.toggle("hidden")
             // My icon
-            myIcon[x].classList.toggle("hidden");
-            myIcon[x].classList.toggle("active");
+            myIcon[x].classList.toggle("hidden")
+            myIcon[x].classList.toggle("active")
         }
     })
 }
 
+/* Event Lis
+======================================================================================================================*/
 // The following changes the icon of the nav when mouse in and out
 // Mouse in to show cow depending on active class
 icon.addEventListener("mouseover", function () {
@@ -88,3 +98,24 @@ icon.addEventListener("mouseout", function () {
         }
     }
 })
+
+// Runs when the screen size is changed to 600px
+window.addEventListener("resize", function () {
+    if (window.innerWidth < 601) {
+        fontIconResize()
+    }
+    else if (window.innerWidth > 600) {
+        for (let i = 0; i < fontAwesomeIcons.length; i++) {
+            fontAwesomeIcons[i].classList.remove("fa-4x")
+        }
+    }
+})
+
+/* Functions
+======================================================================================================================*/
+// Resize the font awesonme icons in the footer
+function fontIconResize() {
+    for (let i = 0; i < fontAwesomeIcons.length; i++) {
+        fontAwesomeIcons[i].classList.add("fa-4x")
+    }
+}

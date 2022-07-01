@@ -125,31 +125,63 @@ h2 {
 
 /* Light/Dark mode btn */
 #light-dark-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    position: relative;
 
-#light-dark-btn span {
     width: 50px;
     height: 50px;
-
-    font-size: 2em;
-    text-align: center;
 
     border: 2px solid var(--dark-teal);
     border-radius: 10px;
     box-shadow: 0 0 5px var(--dark-teal);
 }
 
-#light-dark-btn span.dark-mode {
+#light-dark-btn.dark-mode {
     border: 2px solid var(--golden);
     border-radius: 10px;
     box-shadow: 0 0 5px var(--golden);
 }
 
+#light-dark-btn span {
+    position: absolute;
+    top: 0;
+    left: -2px;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 2rem;
+    text-align: center;
+}
+
 #light-dark-btn span:hover {
     cursor: pointer;
+}
+
+/* Change to phone screens commonly with 414px width */
+@media screen and (max-width: 1070px) {
+    #nav-bar {
+        height: 100%;
+    }
+    #nav-bar-content, #nav-bar-content div:last-child {
+        flex-direction: column;
+    }
+
+    #nav-bar-content div:last-child {
+        flex-flow: column-reverse;
+    }
+
+    #my-icon img {
+        width: 200px;
+    }
+
+    #resume {
+        width: 300px;
+        height: 100px;
+    }
+
+    #resume span {
+        font-size: 3rem;
+    }
 }
 
 /* header
@@ -271,6 +303,39 @@ main p a {
     color: white;
 }
 
+@media screen and (max-width: 1070px) {
+    .grid-base {
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        gap: .5rem;
+    }
+
+    .grid-base a, .grid-base div, .grid-base img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .grid-base a .grid-button-hover {
+        width: 100%;
+
+        background: rgba(0, 0, 0, .8);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .grid-base {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        gap: .5rem;
+    }
+
+    .grid-base a, .grid-base div, .grid-base img {
+        width: 190px;
+        height: 190px;
+    }
+}
+
 /* Animation that shows text move top to middle */
 @keyframes top-down {
     0% {
@@ -304,6 +369,24 @@ main p a {
 
 #bio p a {
     font-weight: bold;
+}
+
+@media only screen and (max-width: 990px) {
+    #bio p {
+        width: 800px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #bio p {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #bio p {
+        width: 366px;
+    }
 }
 
 /* footer
@@ -357,10 +440,38 @@ footer p {
     border: 2px solid var(--bg-dark);
 }
 
+#font-awesome-icons-list a.dark-mode {
+    border: 2px solid var(--bg-dark);
+}
+
+#font-awesome-icons-list a.dark-mode:hover {
+    border: 2px solid white;
+}
+
 #font-awesome-icons-list i {
     color: white;
 }
 
 #font-awesome-icons-list a:hover i {
     color: var(--bg-dark);
+}
+
+#font-awesome-icons-list a.dark-mode i {
+    color: var(--bg-dark);
+}
+
+#font-awesome-icons-list a.dark-mode:hover i {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    #font-awesome-icons-list div {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #font-awesome-icons-list a {
+        width: 150px;
+        height: 150px;
+    }
 }
