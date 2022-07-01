@@ -6,9 +6,11 @@
     File: main-page.js
 */
 
-// h1, p
+// h1, h2, p
 const allHeadOne = document.querySelectorAll("h1");
-const allPara = document.querySelectorAll("p");
+const bioHeadTwo = document.querySelector("#bio h2");
+const headerPara = document.querySelector("header p");
+const allBioPara = document.querySelectorAll("#bio p");
 // Body
 const docBody = document.querySelector("body");
 const lightDarkModeBtnBtn = document.querySelectorAll("#light-dark-btn span");
@@ -20,23 +22,32 @@ const cowLight = document.querySelector("#cow-light");
 const cowDark = document.querySelector("#cow-dark");
 // page btn
 const resumeBtn = document.querySelector("#resume");
+// Main
+const mainSection = document.querySelector("main");
+// Footer
+const footerSection = document.querySelector("footer");
 
 // Following toggles light to dark mode and vice versa
 for (let i = 0; i < 2; i++) {
     lightDarkModeBtnBtn[i].addEventListener("click", function () {
-        // h1, p
+        // h1, h2, p
         for (let head = 0; head < allHeadOne.length; head++)
         {
             allHeadOne[head].classList.toggle("dark-mode-text");
         }
-        for (let para = 0; para < allPara.length; para++)
+        for (let bio = 0; bio < allBioPara.length; bio++)
         {
-            allPara[para].classList.toggle("dark-mode-text");
+            allBioPara[bio].classList.toggle("dark-mode-text");
         }
-
+        bioHeadTwo.classList.toggle("dark-mode-text")
+        headerPara.classList.toggle("dark-mode-text");
         // Body bg
         docBody.classList.toggle("dark-mode-bg");
         resumeBtn.classList.toggle("dark-mode")
+        // main
+        mainSection.classList.toggle("dark-mode")
+        // footer
+        footerSection.classList.toggle("dark-mode")
 
         for (let x = 0; x < 2; x++) {
             // Light/Dark button btn
