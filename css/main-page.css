@@ -255,6 +255,7 @@ main p a {
 
 .grid-base img {
     height: 200px;
+    object-fit: cover;  
 }
 
 /* The following shows the 2nd img when hover over a */
