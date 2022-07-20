@@ -1,11 +1,3 @@
-/*
-    This is my scripts for my main page
-
-    Author: Ming Li
-    Date: 6/29/2022
-    File: main-page.js
-*/
-
 // h1, h2, p
 const allHeadOne = document.querySelectorAll("h1");
 const bioHeadTwo = document.querySelector("#bio h2");
@@ -25,6 +17,10 @@ const cowDark = document.querySelector("#cow-dark");
 const resumeBtn = document.querySelector("#resume");
 // Main
 const mainSection = document.querySelector("main");
+// Comment
+const commentCards = document.querySelectorAll('.card');
+const arrowLeftBtn = document.querySelector('.arrow-left');
+const arrowRightBtn = document.querySelector('.arrow-right');
 // Footer
 const footerSection = document.querySelector("footer");
 const fontAwesomeIcons = document.querySelectorAll("#font-awesome-icons-list a");
@@ -111,6 +107,38 @@ window.addEventListener("resize", function () {
     }
 })
 
+// User Presses buttons to go through Comments
+// Left Arrow
+arrowLeftBtn.addEventListener('click', () => {
+    for (let card = 0; card < commentCards.length; card++) {
+        if (commentCards[card].classList.contains('show') && card === 0) {
+            commentCards[card].classList.remove('show')
+            commentCards[commentCards.length - 1].classList.add('show')
+            break
+        }
+        else if (commentCards[card].classList.contains('show')) {
+            commentCards[card].classList.remove('show')
+            commentCards[card - 1].classList.add('show')
+            break
+        }
+    }
+})
+
+// Right Arrow
+arrowRightBtn.addEventListener('click', () => {
+    for (let card = 0; card < commentCards.length; card++) {
+        if (commentCards[card].classList.contains('show') && card === commentCards.length - 1) {
+            commentCards[card].classList.remove('show')
+            commentCards[0].classList.add('show')
+            break
+        }
+        else if (commentCards[card].classList.contains('show')) {
+            commentCards[card].classList.remove('show')
+            commentCards[card + 1].classList.add('show')
+            break
+        }
+    }
+})
 /* Functions
 ======================================================================================================================*/
 // Resize the font awesonme icons in the footer

@@ -1,11 +1,3 @@
-/*
-    This works with screen-loader.css
-
-    Author: Ming Li
-    Date: 6/30/2022
-    File: screen-loader.js
-*/
-
 // loading-wrapper class
 const screenLoader = document.querySelector(".loading-wrapper");
 

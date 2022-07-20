@@ -1,11 +1,3 @@
-/*
-    Thankyou https://loading.io/css/ for the custom loading spining icon
-
-    Author: Ming Li
-    Date: 6/30/2022
-    File: screen-loader.css
-*/
-
 /* Makes the loading cover the entire page */
 .loading-wrapper {
     position: fixed;
