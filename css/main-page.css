@@ -345,6 +345,7 @@ main p a {
 /* Comments
 ======================================================================================================================*/
 #comments {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -440,6 +441,55 @@ main p a {
     transform: translateY(-50%);
 }
 
+/* Button Position */
+.button-position {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    bottom: 0;
+}
+
+.button-position div {
+    --btn-width: 30px;
+
+    position: relative;
+    height: 5px;
+    width: var(--btn-width);
+
+    border: 1px solid white;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.button-position div.dark-mode {
+    border: 1px solid black;
+}
+
+.button-position button {
+    position: absolute;
+    height: 5px;
+    width: var(--btn-width);
+    top: 0;
+    left: 0;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    transition: 200ms ease-in-out;
+    animation: btnPositionShow 200ms forwards;
+}
+
+.button-position button.show {
+    background-color: white;
+}
+
+.button-position button.dark-mode.show {
+    background-color: black;
+}
+
 @keyframes showComment {
     0% {
         transform: translateY(50%);
@@ -448,6 +498,16 @@ main p a {
 
     100% {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes btnPositionShow {
+    0% {
+       opacity: 0;
+    }
+
+    100% {
         opacity: 1;
     }
 }

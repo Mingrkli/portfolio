@@ -21,6 +21,9 @@ const mainSection = document.querySelector("main");
 const commentCards = document.querySelectorAll('.card');
 const arrowLeftBtn = document.querySelector('.arrow-left');
 const arrowRightBtn = document.querySelector('.arrow-right');
+// Comment Button Position
+const btnPositionContainer = document.querySelectorAll('.button-position div')
+const btnPosition = document.querySelectorAll('.button-position button')
 // Footer
 const footerSection = document.querySelector("footer");
 const fontAwesomeIcons = document.querySelectorAll("#font-awesome-icons-list a");
@@ -60,6 +63,24 @@ for (let i = 0; i < 2; i++) {
             myIcon[x].classList.toggle("hidden")
             myIcon[x].classList.toggle("active")
         }
+
+        // Toggle Dark Mode for Position buttons
+        for(let position = 0; position < btnPositionContainer.length; position++) {
+            btnPositionContainer[position].classList.toggle('dark-mode')
+            btnPosition[position].classList.toggle('dark-mode')
+        }
+    })
+}
+
+for (let i = 0; i < btnPosition.length; i++) {
+    btnPosition[i].addEventListener('click', () => {
+        positionChange(i)
+
+        for (let card = 0; card < commentCards.length; card++) {
+            commentCards[card].classList.remove('show')
+        }
+
+        commentCards[i].classList.add('show')
     })
 }
 
@@ -81,7 +102,7 @@ icon.addEventListener("mouseover", function () {
     }
 })
 
-// Hover out to return the icon to orignal before hover
+// Hover out to return the icon to original before hover
 icon.addEventListener("mouseout", function () {
     for (let i = 0; i < 2; i++) {
         if (myIcon[0].classList.contains("active") && initialsLight) {
@@ -114,11 +135,13 @@ arrowLeftBtn.addEventListener('click', () => {
         if (commentCards[card].classList.contains('show') && card === 0) {
             commentCards[card].classList.remove('show')
             commentCards[commentCards.length - 1].classList.add('show')
+            positionChange(commentCards.length - 1);
             break
         }
         else if (commentCards[card].classList.contains('show')) {
             commentCards[card].classList.remove('show')
             commentCards[card - 1].classList.add('show')
+            positionChange(card - 1);
             break
         }
     }
@@ -130,20 +153,31 @@ arrowRightBtn.addEventListener('click', () => {
         if (commentCards[card].classList.contains('show') && card === commentCards.length - 1) {
             commentCards[card].classList.remove('show')
             commentCards[0].classList.add('show')
+            positionChange(0);
             break
         }
         else if (commentCards[card].classList.contains('show')) {
             commentCards[card].classList.remove('show')
             commentCards[card + 1].classList.add('show')
+            positionChange(card + 1);
             break
         }
     }
 })
+
 /* Functions
 ======================================================================================================================*/
-// Resize the font awesonme icons in the footer
+// Resize the font awesome icons in the footer
 function fontIconResize() {
     for (let i = 0; i < fontAwesomeIcons.length; i++) {
         fontAwesomeIcons[i].classList.add("fa-4x")
     }
+}
+
+function positionChange(num) {
+    btnPosition.forEach(e => {
+        e.classList.remove('show')
+    });
+
+    btnPosition[num].classList.add('show')
 }
