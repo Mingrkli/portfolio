@@ -452,6 +452,28 @@ main p a {
     }
 }
 
+@media only screen and (max-width: 770px) {
+    #comments {
+        margin: 10rem 0;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 470px) {
+    .arrow-left {
+        left: -2rem;
+    }
+    
+    .arrow-right {
+        right: -2rem;
+    }
+
+}
+
 /* bio
 ======================================================================================================================*/
 #bio {
