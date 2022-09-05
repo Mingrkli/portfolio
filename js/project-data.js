@@ -30,19 +30,19 @@ projectData = [
         link: 'https://shape-drawing-tool.netlify.app/'
     },
     {
+        title: 'Shape Creator Random',
+        img: 'img/other-projects/sr.png',
+        link: 'https://cool-shapes.netlify.app/'
+    },
+    {
+        title: 'Mouse Character Trail',
+        img: 'img/other-projects/ct.png',
+        link: 'https://character-trail.netlify.app/'
+    },
+    {
         title: 'Color Time With Local Storage',
         img: 'img/other-projects/cc.png',
         link: 'https://mingrkli-color-time.netlify.app/'
-    },
-    {
-        title: 'Countdown',
-        img: 'img/other-projects/count.png',
-        link: 'https://mingrkli-countdown.netlify.app/'
-    },
-    {
-        title: 'Simple Calculator with Light/Dark Mode',
-        img: 'img/other-projects/cal.png',
-        link: 'https://mingrkli-simple-calculator.netlify.app/'
     },
     {
         title: 'Boxing Legend - Suggested by Shroz',
