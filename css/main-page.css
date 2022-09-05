@@ -5,8 +5,8 @@
 }
 
 :root {
-    --dark-teal: #29D4A7;
-    --golden: #FFDD00;
+    --dark-teal: #29D4A7CC;
+    --golden: #FFDD00CC;
     --bg-dark: #111111;
 }
 
@@ -44,6 +44,19 @@ h2 {
     -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+ */
+}
+
+/* Canvas
+============================================================================================== */
+#canvas1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
 }
 
 /* nav-bar
@@ -239,6 +252,7 @@ main p a {
     position: relative;
     height: 200px;
 
+    border-radius: 100%;
     overflow: hidden;
 }
 
@@ -275,6 +289,10 @@ main p a {
 
 .grid-base a:hover img {
     transform: scale(1.3);
+}
+
+.grid-base a .grid-button-hover {
+    animation: down-top 300ms;
 }
 
 .grid-base a:hover .grid-button-hover {
@@ -339,6 +357,16 @@ main p a {
 
     100% {
         top: 50%;
+    }
+}
+
+@keyframes down-top {
+    0% {
+        top: 50%;
+    }
+
+    100% {
+        top: 0;
     }
 }
 
