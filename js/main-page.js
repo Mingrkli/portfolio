@@ -17,6 +17,8 @@ const cowDark = document.querySelector("#cow-dark");
 const resumeBtn = document.querySelector("#resume");
 // Main
 const mainSection = document.querySelector("main");
+const projectContainer = document.getElementById('myProjects')
+const commentsContainer = document.getElementById('commentsContainer')
 // Comment
 const commentCards = document.querySelectorAll('.card');
 const arrowLeftBtn = document.querySelector('.arrow-left');
@@ -82,6 +84,21 @@ for (let i = 0; i < btnPosition.length; i++) {
 
         commentCards[i].classList.add('show')
     })
+}
+
+// For each project in projectData, create an link on the grid
+for (let i = 0; i < projectData.length; i++) {
+    let link = 
+    `
+    <a href="${projectData[i].link}" target="_blank">
+        <div>
+            <img src="${projectData[i].img}" alt="" class="grid-button">
+            <p class="grid-button-hover">${projectData[i].title}</p>
+        </div>
+    </a>
+    `
+
+    projectContainer.innerHTML += link;
 }
 
 /* Event Lis
