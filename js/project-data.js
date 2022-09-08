@@ -25,6 +25,11 @@ projectData = [
         link: 'https://mingrkli-gameclub.netlify.app/'
     },
     {
+        title: 'Sound Hearing Animation',
+        img: 'img/other-projects/sa.png',
+        link: 'https://sound-hearing-animation.netlify.app/'
+    },
+    {
         title: 'Shape Drawing Tool',
         img: 'img/other-projects/dt.png',
         link: 'https://shape-drawing-tool.netlify.app/'
@@ -43,10 +48,5 @@ projectData = [
         title: 'Color Time With Local Storage',
         img: 'img/other-projects/cc.png',
         link: 'https://mingrkli-color-time.netlify.app/'
-    },
-    {
-        title: 'Sound Hearing Animation',
-        img: 'img/other-projects/sa.png',
-        link: 'https://sound-hearing-animation.netlify.app/'
     },
 ]
