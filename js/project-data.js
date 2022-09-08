@@ -45,8 +45,8 @@ projectData = [
         link: 'https://mingrkli-color-time.netlify.app/'
     },
     {
-        title: 'Boxing Legend - Suggested by Shroz',
-        img: 'img/other-projects/bl.png',
-        link: 'https://boxing-legends.netlify.app/'
+        title: 'Sound Hearing Animation',
+        img: 'img/other-projects/sa.png',
+        link: 'https://sound-hearing-animation.netlify.app/'
     },
 ]
